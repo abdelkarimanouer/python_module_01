@@ -1,8 +1,8 @@
 class Plant:
-    def __init__(self, name, height: int, days: int) -> None:
-        self.name = name
-        self.height = height
-        self.days = days
+    def __init__(self) -> None:
+        self.name: str
+        self.height: int
+        self.days: int
 
     def grow(self):
         self.height += 1
@@ -15,7 +15,10 @@ class Plant:
 
 
 if __name__ == "__main__":
-    p1 = Plant("Rose", 25, 30)
+    p1 = Plant()
+    p1.name = "Rose"
+    p1.days = 30
+    p1.height = 25
     old_height = p1.height
     print("=== Day 1 ===")
     print(p1.get_info())
