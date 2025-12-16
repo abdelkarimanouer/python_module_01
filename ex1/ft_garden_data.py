@@ -4,6 +4,6 @@ class ClsPlant:
 
 
 print("=== Garden Plant Registry ===")
-plant1 = ClsPlant("Rose", 25, 30)
-plant2 = ClsPlant("Sunflower", 80, 45)
-plant3 = ClsPlant("Cactus", 15, 120)
+p1 = ClsPlant("Rose", 25, 30)
+p2 = ClsPlant("Sunflower", 80, 45)
+p3 = ClsPlant("Cactus", 15, 120)
