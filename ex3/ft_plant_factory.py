@@ -5,7 +5,7 @@ class Plant:
         self.name = name
         self.height = s_height
         self.age = s_age
-        print(f"Created: {name} ({s_height}cm, {s_age} days)")
+        print(f"Created: {self.name} ({self.height}cm, {self.age} days)")
         Plant.total_plants += 1
 
 
