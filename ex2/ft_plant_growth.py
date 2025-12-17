@@ -1,5 +1,10 @@
+"""This is a simple blueprint class Plant with name, height, age"""
+
+
 class Plant:
+    """Blueprint for making plant objects"""
     def __init__(self) -> None:
+        """Setup empty plant with no values yet"""
         self.name: str
         self.height: int
         self.days: int
@@ -11,10 +16,13 @@ class Plant:
         self.days += 1
 
     def get_info(self) -> str:
+        """Return plant info as string"""
         return f"{self.name}: {self.height}cm, {self.days} days old"
 
 
 if __name__ == "__main__":
+    """Main program starts here"""
+
     p1 = Plant()
     p1.name = "Rose"
     p1.days = 30

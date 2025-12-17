@@ -1,7 +1,12 @@
+"""This is a Plant class with counter to track all plants"""
+
+
 class Plant:
+    """Blueprint for making plant objects"""
     total_plants = 0
 
     def __init__(self, name: str, s_height: int, s_age: int) -> None:
+        """Setup plant with name, height and age"""
         self.name = name
         self.height = s_height
         self.age = s_age
@@ -10,6 +15,8 @@ class Plant:
 
 
 if __name__ == "__main__":
+    """Main program starts here"""
+
     print("=== Plant Factory Output ===")
     p1 = Plant("Rose", 25, 30)
     p2 = Plant("Oak", 200, 365)

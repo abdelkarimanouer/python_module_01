@@ -1,11 +1,18 @@
+"""This is a simple blueprint class Plant with name, height, age"""
+
+
 class Plant:
+    """Blueprint for making plant objects"""
     def __init__(self) -> None:
+        """Setup empty plant with no values yet"""
         self.name: str
         self.height: int
         self.age: int
 
 
 if __name__ == "__main__":
+    """Main program starts here"""
+
     p1 = Plant()
     p2 = Plant()
     p3 = Plant()
