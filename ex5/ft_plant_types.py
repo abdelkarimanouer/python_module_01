@@ -40,16 +40,19 @@ if __name__ == "__main__":
     print("=== Garden Plant Types ===")
 
     rose = Flower("Rose", 25, 30, "red")
+    tulip = Flower("Tulip", 20, 15, "yellow")
     print(f"\n{rose.name} (Flower): {rose.height}cm, {rose.age} days, "
           f"{rose.color} color")
     rose.bloom()
 
     oak = Tree("Oak", 500, 1825, 50)
+    pine = Tree("Pine", 400, 1000, 40)
     print(f"\n{oak.name} (Tree): {oak.height}cm, {oak.age} days, "
           f"{oak.trunk_diameter}cm diameter")
     oak.produce_shade()
 
-    tomato = Vegetable("Tomato", 80, 90, "summer", "vitamine C")
+    tomato = Vegetable("Tomato", 80, 90, "summer", "vitamin C")
+    carrot = Vegetable("Carrot", 30, 60, "fall", "vitamin A")
     print(f"\n{tomato.name} (Vegetable): {tomato.height}cm, "
           f"{tomato.age} days, {tomato.harvest_season} harvest")
     print(f"{tomato.name} is rich in {tomato.nutritional_value}")
