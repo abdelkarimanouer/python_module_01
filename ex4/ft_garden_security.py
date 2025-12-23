@@ -1,6 +1,3 @@
-"""This is a SecurePlant class that protects data from bad values"""
-
-
 class SecurePlant:
     """Blueprint for making secure plant objects with validation"""
     def __init__(self, name) -> None:
