@@ -1,6 +1,3 @@
-"""This is a simple blueprint class Plant with name, height, age"""
-
-
 class Plant:
     """Blueprint for making plant objects"""
     def __init__(self) -> None:
