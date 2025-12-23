@@ -1,6 +1,3 @@
-"""This is a Plant class with counter to track all plants"""
-
-
 class Plant:
     """Blueprint for making plant objects"""
     total_plants = 0
