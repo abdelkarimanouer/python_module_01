@@ -8,6 +8,7 @@ class Plant:
 
 
 class Flower(Plant):
+    """Flower plant that can bloom with color"""
     def __init__(self, name: str, s_height: int, s_age: int,
                  color: str) -> None:
         super().__init__(name, s_height, s_age)
@@ -18,6 +19,7 @@ class Flower(Plant):
 
 
 class Tree(Plant):
+    """Tree plant that has trunk and makes shade"""
     def __init__(self, name: str, height: int, age: int,
                  trunk_diameter: int) -> None:
         super().__init__(name, height, age)
@@ -29,6 +31,7 @@ class Tree(Plant):
 
 
 class Vegetable(Plant):
+    """Vegetable plant with harvest time and nutrition info"""
     def __init__(self, name: str, height: int, age: int, harvest_season: str,
                  nutritional_value: str) -> None:
         super().__init__(name, height, age)
@@ -37,6 +40,8 @@ class Vegetable(Plant):
 
 
 if __name__ == "__main__":
+    """Main program starts here"""
+
     print("=== Garden Plant Types ===")
 
     rose = Flower("Rose", 25, 30, "red")
