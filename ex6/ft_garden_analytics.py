@@ -16,6 +16,7 @@ class Plant:
 
 
 class FloweringPlant(Plant):
+    """Plant that has flowers with color and blooming status"""
     type = "flowering"
 
     def __init__(self, name: str, s_height: int, color: str,
@@ -32,6 +33,7 @@ class FloweringPlant(Plant):
 
 
 class PrizeFlower(FloweringPlant):
+    """Special flowering plant that can win prizes"""
     type = "prize flowers"
 
     def __init__(self, name: str, s_height: int, color: str,
@@ -44,8 +46,9 @@ class PrizeFlower(FloweringPlant):
 
 
 class GardenManager:
-
+    """Manager for handling gardens with plants and statistics"""
     class GardenStats:
+        """Helper class to calculate garden statistics"""
         def calculate_stats(self, plants, total_growth):
             regular_count = 0
             flowering_count = 0
@@ -107,6 +110,8 @@ class GardenManager:
 
 
 if __name__ == "__main__":
+    """Main program starts here"""
+
     print("=== Garden Management System Demo ===\n")
     oak = Plant("Oak Tree", 100)
     rose = FloweringPlant("Rose", 25, "red", True)
