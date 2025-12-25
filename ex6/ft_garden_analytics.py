@@ -57,7 +57,7 @@ class GardenManager:
                     flowering_count += 1
                 elif plant.type == "prize flowers":
                     prize_count += 1
-            print(f"\nPlants added: {len(plants)}, Total growth: "
+            print(f"Plants added: {len(plants)}, Total growth: "
                   f"{total_growth}cm")
             print(f"Plant types: {regular_count} regular, {flowering_count} "
                   f"flowering, {prize_count} prize flowers")
@@ -68,11 +68,27 @@ class GardenManager:
         self.owner_name = owner_name
         self.plants = []
         self.total_growth = 0
-        self.total_gardens += 1
+        GardenManager.total_gardens += 1
 
-    def add_plant(self, plant: Plant):
+    @classmethod
+    def create_garden_network(cls, owner_names: list[str]):
+        gardens = []
+        for name in owner_names:
+            garden = cls(name)
+            gardens.append(garden)
+        return gardens
+
+    @staticmethod
+    def validate_height(height: int) -> bool:
+        if height > 0:
+            return True
+        else:
+            return False
+
+    def add_plant(self, plant: Plant, showed: bool = True):
         self.plants.append(plant)
-        print(f"Added {plant.name} to {self.owner_name}'s garden")
+        if showed:
+            print(f"Added {plant.name} to {self.owner_name}'s garden")
 
     def grow_all(self):
         print(f"\n{self.owner_name} is helping all plants grow...")
@@ -85,6 +101,7 @@ class GardenManager:
         print("Plants in garden:")
         for plant in self.plants:
             print(f"{plant.report()}")
+        print()
         stats = self.GardenStats()
         stats.calculate_stats(self.plants, self.total_growth)
 
@@ -95,11 +112,24 @@ if __name__ == "__main__":
     rose = FloweringPlant("Rose", 25, "red", True)
     sunflower = PrizeFlower("Sunflower", 50, "yellow", True, 10)
 
-    g1 = GardenManager("Alice")
+    alice, bob = GardenManager.create_garden_network(["Alice", "Bob"])
 
-    g1.add_plant(oak)
-    g1.add_plant(rose)
-    g1.add_plant(sunflower)
+    alice.add_plant(oak)
+    alice.add_plant(rose)
+    alice.add_plant(sunflower)
+    alice.grow_all()
+    alice.report()
 
-    g1.grow_all()
-    g1.report()
+    tree = Plant("Pine", 60)
+    flower = FloweringPlant("Lily", 32, "white", False)
+
+    print()
+    bob.add_plant(tree, False)
+    bob.add_plant(flower, False)
+
+    print()
+    print(f"Height validation test: {GardenManager.validate_height(25)}")
+    alice_score = sum(plant.height for plant in alice.plants) + 40
+    bob_score = sum(plant.height for plant in bob.plants)
+    print(f"Garden scores - Alice: {alice_score}, Bob: {bob_score}")
+    print(f"Total gardens managed: {GardenManager.total_gardens}")
