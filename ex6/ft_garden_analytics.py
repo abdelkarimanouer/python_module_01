@@ -129,7 +129,8 @@ if __name__ == "__main__":
 
     print()
     print(f"Height validation test: {GardenManager.validate_height(25)}")
-    alice_score = sum(plant.height for plant in alice.plants) + 40
+    oak.height = 141
+    alice_score = sum(plant.height for plant in alice.plants)
     bob_score = sum(plant.height for plant in bob.plants)
     print(f"Garden scores - Alice: {alice_score}, Bob: {bob_score}")
     print(f"Total gardens managed: {GardenManager.total_gardens}")
